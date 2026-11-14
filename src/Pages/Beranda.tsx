@@ -17,9 +17,15 @@ import {
 } from "lucide-react";
 import { Link } from "react-router";
 
+interface modal {
+  title: string;
+  content: string;
+  component?: React.ReactElement;
+}
+
 export default function Beranda() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [selectedModal, setSelectedModal] = useState(null);
+  const [selectedModal, setSelectedModal] = useState<modal | null>(null);
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 antialiased selection:bg-emerald-500 selection:text-white">

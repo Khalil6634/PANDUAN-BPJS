@@ -8,12 +8,21 @@ import {
 } from "lucide-react";
 import { Link } from "react-router";
 
+interface VideoItem {
+  id: number;
+  title: string;
+  category: string;
+  duration: string;
+  description: string;
+  videoUrl: string;
+}
+
 export default function VideoListPage() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [selectedVideo, setSelectedVideo] = useState<VideoItem | null>(null);
 
   // Data kumpulan video panduan
-  const videos = [
+  const videos: VideoItem[] = [
     {
       id: 1,
       title: "Alur Antrean Online FTKP",
